@@ -46,8 +46,8 @@ class EnhancedGraphDatabase(GraphDatabase):
 
     def cleandb(self):
         request = self.new_request()
-        response, content = request.delete(self._cleandb_uri)
-        if response.status != 200:
+        response = request.delete(self._cleandb_uri)
+        if response.status_code != 200:
             warnings.warn('The CLEANDB_URI you specified is invalid: %s'
                           % self._cleandb_uri)
             # then try to do it with gremlin
