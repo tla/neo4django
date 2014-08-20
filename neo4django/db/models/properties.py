@@ -487,7 +487,7 @@ class BoundProperty(AttrRouter):
 
     def value_to_string(self, obj):
         #TODO not sure if this method plays a bigger role in django
-        return str(self.__get__(obj))
+        return unicode(self.__get__(obj))
 
     @transactional
     def __set_value(self, instance, value):
