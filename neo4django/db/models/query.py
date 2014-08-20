@@ -1312,7 +1312,7 @@ class NodeQuerySet(QuerySet):
         try:
             obj = self.get(**kwargs)
             created = False
-        except:
+        except self.model.DoesNotExist:
             values = dict(defaults)
             values.update(kwargs)
             obj = self.create(**values)
