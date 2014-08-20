@@ -13,3 +13,4 @@ virtualenv
 lib
 build
 dist
+neo4django.egg-info
